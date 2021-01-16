@@ -6,7 +6,8 @@ namespace EfDemo.Console
     {
         static void Main(string[] args)
         {
-            _01_QueriesIntroduction.Run();
+            // _01_QueriesIntroduction.Run();
+            _02_QueryWithConstraints.Run();
         }
     }
 }

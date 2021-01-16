@@ -6,8 +6,8 @@ namespace EfDemo.Console.demos
     {
         public static void Run()
         {
-            SelectTitle();
-            SelectTitleAndDirector();
+            // SelectTitle();
+            // SelectTitleAndDirector();
             SelectAll();
         }
 
