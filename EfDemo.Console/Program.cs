@@ -8,7 +8,8 @@ namespace EfDemo.Console
         {
             // _01_QueriesIntroduction.Run();
             // _02_QueryWithConstraints.Run();
-            _03_SortingAndPaging.Run();
+            // _03_SortingAndPaging.Run();
+            _99_RawSql.Run();
         }
     }
 }
