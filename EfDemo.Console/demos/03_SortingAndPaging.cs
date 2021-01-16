@@ -13,7 +13,7 @@ namespace EfDemo.Console.demos
 
         private static void SelectDistinctDirectors_Sorted()
         {
-            using var dbContext = new ConsoleEfDemoContext();
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             var sortedDirectors = dbContext.Movies
                 .Select(movie => new
@@ -28,7 +28,7 @@ namespace EfDemo.Console.demos
 
         private static void SelectLastFourMovies()
         {
-            using var dbContext = new ConsoleEfDemoContext(true);
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             var last4Movies = dbContext.Movies
                 .Select(movie => new
@@ -44,7 +44,7 @@ namespace EfDemo.Console.demos
 
         private static void SelectNextFiveMovies()
         {
-            using var dbContext = new ConsoleEfDemoContext(true);
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             var last4Movies = dbContext.Movies
                 .Select(movie => new

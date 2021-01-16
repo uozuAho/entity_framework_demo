@@ -23,7 +23,7 @@ namespace EfDemo.Console.demos
 
         private static void SelectTitleAndDirector()
         {
-            using var dbContext = new ConsoleEfDemoContext();
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             ConsoleUtils.PrintAsJson(dbContext.Movies.Select(movie => new
             {
@@ -34,7 +34,7 @@ namespace EfDemo.Console.demos
 
         private static void SelectAll()
         {
-            using var dbContext = new ConsoleEfDemoContext();
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             ConsoleUtils.PrintAsJson(dbContext.Movies);
         }

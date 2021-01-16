@@ -12,7 +12,7 @@ namespace EfDemo.Console.demos
 
         private static void SelectMovie6()
         {
-            using var dbContext = new ConsoleEfDemoContext();
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             var marges = dbContext.Movies
                 .Where(movie => movie.Id == 6)
@@ -26,7 +26,7 @@ namespace EfDemo.Console.demos
 
         private static void Select2000sMovies()
         {
-            using var dbContext = new ConsoleEfDemoContext();
+            using var dbContext = new ConsoleEfDemoContext(logQueries:true);
 
             var marges = dbContext.Movies
                 .Where(movie => movie.Year >= 2000 && movie.Year < 2010)
