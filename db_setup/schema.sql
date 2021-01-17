@@ -7,6 +7,7 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE box_office (
+    id SERIAL PRIMARY KEY,
     movie_id int not null,
     rating float not null,
     domestic_sales bigint not null,

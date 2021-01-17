@@ -1,4 +1,4 @@
-﻿namespace EfDemo.Db
+namespace EfDemo.Db
 {
     public class Movie
     {
@@ -7,5 +7,7 @@
         public string Director { get; set; }
         public int Year { get; set; }
         public int LengthMinutes { get; set; }
+
+        public virtual BoxOffice BoxOffice { get; set; }
     }
 }
