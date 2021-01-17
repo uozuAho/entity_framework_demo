@@ -10,6 +10,7 @@ namespace EfDemo.Console
             // _02_QueryWithConstraints.Run();
             // _04_SortingAndPaging.Run();
             _06_Joins.Run();
+            // _13_InsertingRows.Run();
 
             // _99_RawSql.Run();
         }

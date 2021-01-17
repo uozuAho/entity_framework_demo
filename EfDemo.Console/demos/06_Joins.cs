@@ -31,14 +31,15 @@ namespace EfDemo.Console.demos
         {
             using var dbContext = new ConsoleEfDemoContext(logQueries: true);
 
-            var movies = dbContext.Movies.Take(3).ToList();
+            // var movies = dbContext.Movies.Take(3).ToList();
             // boom!
             // var sales = movies.Select(movie => movie.BoxOffice.DomesticSales).ToList();
 
-            // var movies2 = dbContext.Movies.Include(m => m.BoxOffice).Take(3).ToList();
+            var movies2 = dbContext.Movies.Include(m => m.BoxOffice).Take(3).ToList();
             // var sales2 = movies2.Select(movie => movie.BoxOffice.DomesticSales).ToList();
 
-            ConsoleUtils.PrintAsJson(movies);
+            // ConsoleUtils.PrintAsJson(movies);
+            ConsoleUtils.PrintAsJson(movies2);
         }
     }
 }

@@ -13,6 +13,8 @@ namespace EfDemo.Db
             {
                 entity.ToTable("movies");
 
+                entity.HasKey(e => e.Id).HasName("movies_pkey");
+
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Title)
@@ -50,9 +52,9 @@ namespace EfDemo.Db
                     .HasColumnName("international_sales");
 
                 entity.HasOne(e => e.Movie)
-                    .WithOne(e => e.BoxOffice)
-                    .HasForeignKey<Movie>(e => e.Id)
-                    .HasConstraintName("fk_movie");
+                    .WithOne(e => e.BoxOffice);
+                // .HasForeignKey<Movie>(e => e.Id)
+                // .HasConstraintName("fk_movie");
             });
         }
     }
