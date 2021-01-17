@@ -7,7 +7,7 @@ It roughly follows the tutorials at https://sqlbolt.com/.
 # Getting started
 
 - install docker & dotnet 5
-- run `./db_setup/start_db.sh`. This script
+- run `cd db_setup && ./start_db.sh`. This script
     - starts a postgres database in a docker container
     - creates the database schema
     - inserts data into the database

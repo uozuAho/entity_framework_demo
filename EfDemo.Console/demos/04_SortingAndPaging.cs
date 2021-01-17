@@ -2,7 +2,7 @@ using System.Linq;
 
 namespace EfDemo.Console.demos
 {
-    class _03_SortingAndPaging
+    class _04_SortingAndPaging
     {
         public static void Run()
         {
