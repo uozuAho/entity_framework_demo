@@ -11,8 +11,9 @@ namespace EfDemo.Console
             // _04_SortingAndPaging.Run();
             _06_Joins.Run();
             // _13_InsertingRows.Run();
-
+            //
             // _99_RawSql.Run();
+            // _100_LazyEagerLoading.Run();
         }
     }
 }

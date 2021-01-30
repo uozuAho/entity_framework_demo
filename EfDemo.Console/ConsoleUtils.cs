@@ -15,7 +15,7 @@ namespace EfDemo.Console
             Print(JsonSerializer.Serialize(obj, new JsonSerializerOptions
             {
                 WriteIndented = true,
-                ReferenceHandler = ReferenceHandler.Preserve
+                // ReferenceHandler = ReferenceHandler.Preserve
             }));
         }
     }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EfDemo.Console.demos
 {
-    class _06_Joins
+    class _100_LazyEagerLoading
     {
         public static void Run()
         {
@@ -21,7 +21,7 @@ namespace EfDemo.Console.demos
                     movie.Title,
                     movie.BoxOffice.DomesticSales,
                     movie.BoxOffice.InternationalSales
-                }).ToList();
+                });
 
             ConsoleUtils.PrintAsJson(sales);
         }
