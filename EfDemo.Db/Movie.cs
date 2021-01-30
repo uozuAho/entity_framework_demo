@@ -1,18 +1,23 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace EfDemo.Db
 {
-    public class Movie
+    public partial class Movie
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Movie()
+        {
+            BoxOffices = new HashSet<BoxOffice>();
+        }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Director { get; set; }
         public int Year { get; set; }
         public int LengthMinutes { get; set; }
 
-        public virtual BoxOffice BoxOffice { get; set; }
+        public virtual ICollection<BoxOffice> BoxOffices { get; set; }
     }
 }

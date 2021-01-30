@@ -15,12 +15,12 @@ namespace EfDemo.Console.demos
             using var dbContext = new ConsoleEfDemoContext(logQueries: true);
 
             var sales = dbContext.Movies
-                .Include(movie => movie.BoxOffice)
+                .Include(movie => movie.BoxOffices)
                 .Select(movie => new
                 {
                     movie.Title,
-                    movie.BoxOffice.DomesticSales,
-                    movie.BoxOffice.InternationalSales
+                    movie.BoxOffices.First().DomesticSales,
+                    movie.BoxOffices.First().InternationalSales
                 }).ToList();
 
             ConsoleUtils.PrintAsJson(sales);
