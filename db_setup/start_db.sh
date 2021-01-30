@@ -4,6 +4,7 @@
 
 set -eu
 
+DB_NAME=ef-demo-db
 DB_CONTAINER_NAME=db
 PGADMIN_PORT=15432
 
@@ -12,8 +13,8 @@ docker-compose up -d
 
 sleep 1
 
-cat schema.sql | docker exec -i $DB_CONTAINER_NAME psql -U postgres postgres
-cat data.sql | docker exec -i $DB_CONTAINER_NAME psql -U postgres postgres
+cat schema.sql | docker exec -i $DB_CONTAINER_NAME psql -U postgres $DB_NAME
+cat data.sql | docker exec -i $DB_CONTAINER_NAME psql -U postgres $DB_NAME
 
 echo "All done! Connect to pgadmin at http://localhost:$PGADMIN_PORT"
 echo
