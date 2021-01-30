@@ -7,10 +7,7 @@ namespace EfDemo.Console.demos
     {
         public static void Run()
         {
-            // SelectMovieSales();
-            // LazyLoading_BoxOfficeNotIncluded();
-            // LazyLoading_BoxOfficeIncluded();
-            LazyLoadBoxOffice();
+            SelectMovieSales();
         }
 
         private static void SelectMovieSales()
@@ -26,36 +23,6 @@ namespace EfDemo.Console.demos
                 }).First();
 
             ConsoleUtils.PrintAsJson(sales);
-        }
-
-        private static void LazyLoading_BoxOfficeNotIncluded()
-        {
-            using var dbContext = new ConsoleEfDemoContext(logQueries: true);
-
-            var movie = dbContext.Movies.First();
-
-            ConsoleUtils.PrintAsJson(movie);
-            ConsoleUtils.PrintAsJson(movie.BoxOffices);
-        }
-
-        private static void LazyLoading_BoxOfficeIncluded()
-        {
-            using var dbContext = new ConsoleEfDemoContext(logQueries: true);
-
-            var movie = dbContext.Movies.Include(m => m.BoxOffices).First();
-
-            ConsoleUtils.PrintAsJson(movie);
-            ConsoleUtils.PrintAsJson(movie.BoxOffices);
-        }
-
-        private static void LazyLoadBoxOffice()
-        {
-            using var dbContext = new ConsoleEfDemoContext(logQueries: true, useLazyLoading: true);
-
-            var movie = dbContext.Movies.First();
-
-            ConsoleUtils.PrintAsJson(movie);
-            ConsoleUtils.PrintAsJson(movie.BoxOffices.First());
         }
     }
 }
