@@ -29,3 +29,22 @@ INSERT INTO box_office (movie_id, rating, domestic_sales, international_sales) V
 (4, 8.1, 289916256, 272900000),
 (2, 7.2, 162798565, 200600000),
 (13, 7.2, 237283207, 301700000);
+
+INSERT INTO actors (name) VALUES
+('Rishi Allegra'),
+('Eva Marzena'),
+('Maunu Ebbe'),
+('Arman Sharmila');
+
+INSERT INTO movie_actors (movie_id, actor_id) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(2, 3),
+(2, 4),
+(3, 1),
+(5, 1),
+(6, 1),
+(6, 2),
+(6, 3),
+(6, 4);
