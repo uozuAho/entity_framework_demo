@@ -15,5 +15,5 @@ popd
 # if you haven't installed the ef tool yet:
 dotnet tool install --global dotnet-ef
 # reverse engineer entity framework model from the running database
-dotnet ef dbcontext scaffold "Server=localhost;Port=5432;Database=ef-demo-db;User Id=postgres;Password=postgres;" Npgsql.EntityFrameworkCore.PostgreSQL --force
+dotnet ef dbcontext scaffold "Server=localhost;Port=5432;Database=ef-demo-db;User Id=postgres;Password=postgres;" Npgsql.EntityFrameworkCore.PostgreSQL --force --context EfDemoContext
 ```

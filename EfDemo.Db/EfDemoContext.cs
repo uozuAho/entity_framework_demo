@@ -17,10 +17,8 @@ namespace EfDemo.Db
         {
         }
 
-        public virtual DbSet<Actor> Actors { get; set; }
         public virtual DbSet<BoxOffice> BoxOffices { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
-        public virtual DbSet<MovieActor> MovieActors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,18 +32,6 @@ namespace EfDemo.Db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "en_US.utf8");
-
-            modelBuilder.Entity<Actor>(entity =>
-            {
-                entity.ToTable("actors");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(320)
-                    .HasColumnName("name");
-            });
 
             modelBuilder.Entity<BoxOffice>(entity =>
             {
@@ -86,29 +72,6 @@ namespace EfDemo.Db
                     .HasColumnName("title");
 
                 entity.Property(e => e.Year).HasColumnName("year");
-            });
-
-            modelBuilder.Entity<MovieActor>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToTable("movie_actors");
-
-                entity.Property(e => e.ActorId).HasColumnName("actor_id");
-
-                entity.Property(e => e.MovieId).HasColumnName("movie_id");
-
-                entity.HasOne(d => d.Actor)
-                    .WithMany()
-                    .HasForeignKey(d => d.ActorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_actor");
-
-                entity.HasOne(d => d.Movie)
-                    .WithMany()
-                    .HasForeignKey(d => d.MovieId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_movie");
             });
 
             OnModelCreatingPartial(modelBuilder);

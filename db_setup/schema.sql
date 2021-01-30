@@ -17,19 +17,3 @@ CREATE TABLE box_office (
         references movies(id)
         on delete cascade
 );
-
-CREATE TABLE actors (
-    id SERIAL PRIMARY KEY,
-    name varchar(320) NOT NULL
-);
-
-CREATE TABLE movie_actors (
-    movie_id int not null,
-    actor_id int not null,
-    constraint fk_movie
-        foreign key(movie_id)
-        references movies(id),
-    constraint fk_actor
-        foreign key(actor_id)
-        references actors(id)
-);
